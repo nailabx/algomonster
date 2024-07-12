@@ -10,4 +10,4 @@ class TestReverseParentheses(TestCase):
     def test_reverse_parentheses(self):
         s: str = "(ed(et(oc))el)"
         res: str = self.p.reverseParentheses(s=s)
-        print(res)
+        self.assertEqual(res, "leetcode")
