@@ -1,3 +1,8 @@
+from typing import Dict
+class TrieNodeMap:
+    def __init__(self) -> None:
+        self.children: Dict[str, TrieNodeMap] = dict()
+
 class TrieNode:
     def __init__(self):
         self.children = [None]*26
