@@ -38,12 +38,24 @@ class CheckCanConstruct:
         memo[target] = False
         return memo[target]
     
+    def canConstructTab(self, target: str, words: List[List[str]])->bool:
+        tab: List[str] = [False] * (len(target) + 1)
+        tab[0] = True
+        for i in range(len(target) + 1):
+            if tab[i]:
+                for w in words:
+                    if target[i:i + len(w)] == w:
+                        tab[i + len(w)] = True
+        print(tab)
+        return tab[len(target)]
+
+    
 
 if __name__ == "__main__":
     target:str = "abcdef"
     words:List[str] = ["ab", "abc", "cd", "def", "abcd"]
     c = CheckCanConstruct()
-    print(c.canConstruct(target, words))
+    print(c.canConstructTab(target, words))
 
 
         
